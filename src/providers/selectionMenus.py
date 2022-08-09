@@ -65,9 +65,6 @@ def keywordSelection(menu: int, isState: bool):
 
   keywords.pop()
 
-  if(isState):
-    news.listNews(menu, keywords, True)
-  else:
-    news.listNews(menu, keywords, False)
+  news.listNews(menu, keywords, isState)
 
 mainMenu()
