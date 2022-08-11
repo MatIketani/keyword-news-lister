@@ -6,8 +6,6 @@ from bs4 import BeautifulSoup as bs
 ##  NEWS FILTER
 
 def listNews(genre: int, keywords: list, isState: bool):
-  result = []  
-
   if(isState):
     page = bs(requests.get(data.brStates[list(data.brStates)[genre-1]]).content, "xml")
   else:
@@ -19,10 +17,9 @@ def listNews(genre: int, keywords: list, isState: bool):
     link = n.find("link").text
     description = n.find("description").text
 
-    newsKeywords = words.getKeywords(description)
-    matchingPercentage = words.compareLists(keywords, newsKeywords)
+    matchingPercentage = words.compareKeywordsAndText(keywords, description)
 
-    if(matchingPercentage):
+    if(matchingPercentage > 0.6):
       print("[REQUEST FOUND] " + link)
     else:
       pass
