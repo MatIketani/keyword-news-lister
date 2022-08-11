@@ -56,12 +56,11 @@ def keywordSelection(menu: int, isState: bool):
   print("TYPE YOUR KEYWORDS (use 'stop' to stop listening): ")
 
   keywords = []
-  count = 0
+  keyword = None
 
-  while(count <= 10):
-    count = count + 1
+  while(keyword != "stop"):
     keyword = input("> ")
-    keywords.append(keyword)
+    keywords.append(keyword.lower())
 
   keywords.pop()
 
