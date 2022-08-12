@@ -1,4 +1,3 @@
-spacy
 requests
 bs4
 lxml
