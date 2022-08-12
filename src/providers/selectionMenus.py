@@ -65,5 +65,3 @@ def keywordSelection(menu: int, isState: bool):
   keywords.pop()
 
   news.listNews(menu, keywords, isState)
-
-mainMenu()
