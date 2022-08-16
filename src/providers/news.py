@@ -19,7 +19,7 @@ def listNews(genre: int, keywords: list, isState: bool):
 
     matchingPercentage = words.compareKeywordsAndText(keywords, description)
 
-    if(matchingPercentage > 0.6):
+    if(matchingPercentage > 0.):
       print("[REQUEST FOUND] " + link)
     else:
       pass
